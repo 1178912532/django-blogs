@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="../static/css/indexcss.css">
+    {% block css %}{% endblock %}
+    <title>个人博客</title>
+</head>
+<body>
+<div class="top">
+  <div class="top-left">
+    <a href="/index/">首页</a>
+    <span>|</span>
+    <a href="#">学习</a>
+    <span>|</span>
+    <a href="#">收藏</a>
+    <span>|</span>
+    <a href="#">讨论区</a>
+  </div>
+  <div class="top-right">
+    <div class="top-right-choice">
+      <a href="#">登录</a>
+      <span>|</span>
+      <a href="/register/">注册</a>
+      <span>|</span>
+      <a href="#">消息</a>
+    </div>
+<!--    <div class="login-info"></div>-->
+  </div>
+
+</div>
+<div class="lab">
+  <div class="logo">
+    <a href="#"><img src="../static/img/logo.png" ></a>
+  </div>
+  <div class="chioce">
+    <a href="/index/">文章</a>
+    <a href="#">分区</a>
+    <a href="#">留言</a>
+  </div>
+  <div class="search">
+    <form method="get">
+      <input id="s_word" name="s_word" style="color: #888888" value="java" type="text"/>
+      <input id="s_bottom" style="font-size: 12px;padding-left: 3px;width: 40px" value="搜索" type="submit">
+      <div class="search_word">
+        <span id="w_linux" class="in-bo-word">linux</span>
+        <span id="w_python" class="in-bo-word">python</span>
+      </div>
+    </form>
+  </div>
+</div>
+<div class="spri_img">
+  <ul>
+    <li style="background: url(../static/img/img.png) -87px -64.7px no-repeat;background-size: 500px 175px; border-top: 1px solid #cccccc"><a></a></li>
+    <li style="background: url(../static/img/img.png) -197px -64.7px no-repeat;background-size: 500px 175px;"><a></a></li>
+    <li style="background: url(../static/img/img.png) -250px -64.7px no-repeat;background-size: 500px 175px; border-bottom: 1px solid #cccccc"><a></a></li>
+  </ul>
+</div>
+{% block content %}{% endblock %}
+<script type="text/javascript">
+  var odiv=document.getElementsByClassName('top-right')[0];
+  var newNode=null;
+  var textNode=null;
+  var isalert=true;
+  odiv.onclick=function (){
+    newNode=document.createElement('div');
+    if(isalert){
+      odiv.appendChild(newNode);
+      newNode.setAttribute('class','login-info');
+      textNode=document.createTextNode('root');
+      newNode.appendChild(textNode);
+      isalert=false;
+    }
+    else{
+      var outNode=document.getElementsByClassName('login-info')[0];
+      odiv.removeChild(outNode)
+      isalert=true;
+    }
+  }
+  var sword=document.getElementById('s_word');
+  sword.onfocus=function (){
+    this.style.color='black';
+  }
+  sword.onblur=function (){
+    this.style.color='#888888';
+  }
+  var inboword=document.getElementsByClassName('in-bo-word');
+  for(var i=0;i<inboword.length;i++){
+    inboword[i].onclick=function (){
+      var key=this.innerHTML
+      sword.setAttribute('value',key);
+    }
+  }
+</script>
+{% block script %}{% endblock %}
+</body>
+</html>

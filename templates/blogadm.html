@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>管理后台</title>
+    <link rel="stylesheet" type="text/css" href="../static/plugins/bootstrap-3.4.1-dist/css/bootstrap.css">
+</head>
+<body>
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><h1>文章管理</h1></div>
+  <div class="panel-body">
+    <a class="btn btn-default" href="/blogadm/add_blog" role="button">新增文章</a>
+  </div>
+
+  <!-- List group -->
+    {% for row in text_list %}
+  <ul class="list-group">
+      <li class="list-group-item" style="height: 60px"><div class="col-md-10"><h4>{{ row.title }}</h4></div><div class="col-md-2"><a class="btn btn-link" href="{{ row.get_modify_url }}">修改</a><a class="btn btn-link" href="{{ row.get_modify_url }}">删除</a></div></li>
+  </ul>
+    {% endfor %}
+</div>
+</body>
+</html>

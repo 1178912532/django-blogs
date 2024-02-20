@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>修改文章</title>
+    <script src="/static/js/tiny_mce_src.js"></script>
+    <script>
+     tinyMCE.init({
+       'mode':'textareas',
+       'theme':'advanced',
+        'width':450,
+       'height':300
+    })</script>
+</head>
+<body>
+<div class="row">
+    <div class="col">
+        <form action="/editblog/" method="post">
+            {% csrf_token %}
+            {% for row in text %}
+            <div class="">
+                <div>
+                    <label for="title">标题</label>
+                    <input type="text" name="title" id="title" value="{{ row.title }}">
+                    <input type="text" name="id" id="id" value="{{ row.id }}">
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col">
+                    <label for="tags">标签</label>
+                    <input type="text" name="tags" id="tags" value="{{ row.tags }}">
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col">
+                    <label for="content">正文</label>
+                    <textarea class="d-block" name="content" id="content" >{{ row.content }}</textarea>
+                </div>
+            </div>
+            <div class="row my-3">
+                <div class="col">
+                    <button type="submit">提交</button>
+                </div>
+            </div>
+            {% endfor %}
+        </form>
+    </div>
+</div>
+</body>
+</html>

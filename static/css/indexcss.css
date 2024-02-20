@@ -1,0 +1,145 @@
+body{
+    font-family: "Arial Black";
+    font-size: 15px;
+}
+.top{
+    background-color: #b3d4fc;
+    padding-left: 80px;
+    height: 35px;
+    padding-top: 10px;
+    border-radius: 5px;
+}
+.top span{
+    color: #555555;
+}
+.top a{
+    text-decoration: none;
+    color: #555555;
+    display: inline-block;
+
+}
+a:hover{
+    color: yellowgreen;
+    text-decoration: underline;
+}
+.top-left{
+    float: left;
+}
+.top-right{
+    float: right;
+    margin-right: 100px;
+    width: 200px;
+}
+.top-right-choice{
+    padding-left: 50px;
+}
+.login-info{
+    height: 140px;
+    width: 290px;
+    margin-top: 3px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 15px #cccccc;
+}
+.lab{
+    height: 65px;
+    padding: 15px 80px;
+    border-bottom: 1px solid #cccccc;
+    box-shadow: 0 5px 15px #cccccc;
+}
+.logo{
+    float: left;
+    margin-right: 60px;
+}
+.logo img{
+    height: 50px;
+    width: 100px;
+}
+.chioce{
+    height: 60px;
+    width: auto;
+    padding-top: 10px;
+    font-size: 20px;
+    float: left;
+}
+.chioce a{
+    position: relative;
+    text-decoration: none;
+    color: #555555;
+    display: inline-block;
+    margin-right: 20px;
+}
+.chioce a:hover{
+    top: -5px;
+    box-shadow: 0 5px 15px #cccccc;
+    border-radius: 10px;
+}
+#s_bottom:hover{
+    background-color: #b3d4fc;
+    cursor: pointer;
+}
+.search{
+    float: left;
+    margin-left: 400px;
+    position: relative;
+}
+
+.search input{
+    border: 1px solid #555555;
+    height: 40px;
+    width: 280px;
+    border-radius: 5px;
+    margin-top: 2px;
+    padding-left: 10px;
+    font-size: 15px;
+}
+.search_word{
+    position: absolute;
+    top:12px;
+    right: 50px;
+    font-size: 13px;
+}
+.search_word span{
+    background-color: #eee;
+}
+.search_word span:hover{
+    background-color: #ff7600;
+    color: #fff;
+    cursor: pointer;
+}
+.spri_img{
+    width: 48px;
+    position: fixed;
+    bottom: 20px;
+    right: 44px;
+}
+.spri_img li{
+    height: 42px;
+    width: 46px;
+    border: 1px solid #cccccc;
+    border-top: 0 none ;
+    list-style: none;
+}
+.middle{
+    padding: 30px 240px;
+}
+.middle-text{
+    /*border: 1px solid #555555;*/
+}
+.text-size {
+    padding-top: 15px;
+    height: 240px;
+    width: 760px;
+    border-bottom: 1px solid #aaaaaa;
+}
+.text-size a{
+    display: block;
+    text-decoration: none;
+    color: black;
+    height: 60px;
+    line-height: 60px;
+    font-size: 30px;
+}
+.text-index{
+    height: 110px;
+}

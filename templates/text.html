@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% for row in text %}
+    <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="../static/plugins/bootstrap-3.4.1-dist/css/bootstrap.css">
+    <title>{{ row.title }}</title>
+</head>
+<body>
+        <div class="col-md-offset-2 col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-heading"><h1>{{ row.title }}</h1></div>
+                <div class="panel-body">
+                    {% autoescape off %}
+                    {{ row.content }}
+                    {% endautoescape %}
+                </div>
+            </div>
+        </div>
+{% endfor %}
+</body>
+</html>

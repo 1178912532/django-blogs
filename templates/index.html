@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block css %}
+<!-- 此处可以写专属此页面的css-->
+{% endblock %}
+{% block content %}
+<div class="middle">
+    <div class="middle-text">
+        {% for row in text_list %}
+      <div class="middle-text-1 text-size">
+        <a href="/text?id={{ row.id }}"><h4>{{ row.title }}</h4></a>
+        <div class="text-index">
+            {{ row.get_brief_content }}
+        </div>
+        <div>
+          <span>{{ row.tags }}</span>
+          <span>{{row.date.year}}-{{row.date.month}}-{{row.date.day}}</span>
+          <span>浏览次数</span>
+        </div>
+      </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+{% block script %}{% endblock %}
+
